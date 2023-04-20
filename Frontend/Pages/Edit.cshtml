@@ -1,0 +1,47 @@
+@page
+@model Frontend.Pages.Edit
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form method="post">
+    <input hidden asp-for="Employee.ID" />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary pl-3">Create Category</h2>
+            <hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Employee.Name"></label>
+			<input asp-for="Employee.Name" class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Employee.LastName"></label>
+			<input asp-for="Employee.LastName" class="form-control" />
+		</div>
+        <div class="mb-3">
+			<label asp-for="Employee.RFC"></label>
+			<input asp-for="Employee.RFC" class="form-control" />
+		</div>
+        <div class="mb-3">
+			<label asp-for="Employee.BornDate"></label>
+			<input asp-for="Employee.BornDate" type="date" class="form-control" />
+		</div>
+        <div class="mb-4">
+			<label asp-for="Employee.Status"></label><br>
+			<div class="form-check">
+				<input asp-for="Employee.Status" type="radio" class="form-check-input" value="Active">
+				<label class="form-check-label">Active</label>
+			</div>
+			<div class="form-check">
+				<input asp-for="Employee.Status" type="radio" class="form-check-input" value="Inactive">
+				<label class="form-check-label">Inactive</label>
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-primary" style="width:150px;">Edit</button>
+		<a asp-page="Index" class="btn btn-secondary"  style="width:150px;"> Back to List</a>
+       
+	</div>
+	
+</form>
